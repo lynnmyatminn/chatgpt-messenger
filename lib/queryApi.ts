@@ -1,6 +1,7 @@
 import openai from './chatgpt';
 
 const query = async (prompt: string, chatId: string, model: string) => {
+  //   console.log(`current selected model: ${model}`);
   const res = await openai
     .createCompletion({
       model,
@@ -11,9 +12,7 @@ const query = async (prompt: string, chatId: string, model: string) => {
       frequency_penalty: 0,
       presence_penalty: 0,
     })
-    .then((res) => {
-      res.data.choices[0].text;
-    })
+    .then((res) => res.data.choices[0].text)
     .catch(
       (err) =>
         `ChatGPT was unable to find an answer for that! (Error: ${err.message})`
