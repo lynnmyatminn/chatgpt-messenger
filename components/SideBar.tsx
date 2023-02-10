@@ -15,7 +15,7 @@ import ModelSelection from './ModelSelection';
 function SideBar() {
   // const [chats, setChats] = useState([]);
   const { data: session } = useSession();
-  console.log(session);
+  // console.log(session);
 
   const [chats, loading, error] = useCollection(
     session &&
@@ -29,7 +29,7 @@ function SideBar() {
   //   setChats(snapshot?.docs.map((doc) => doc.data().value));
   // }, []);
 
-  console.log(chats, loading, error);
+  // console.log(chats, loading, error);
 
   return (
     <div className="p-2 flex flex-col h-screen">
